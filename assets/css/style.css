@@ -382,8 +382,8 @@ div.thesis-content{
 }
 
 .is-chapter p{
-  text-align: justify;
-  text-justify: inter-character;
+  text-align: left;
+  /* text-justify: inter-character; */
   font-weight: bold;
   font-family: Garamond;
   font-style: normal;
@@ -466,7 +466,8 @@ figcaption {
   padding-right: 3rem;
   margin-top: 0; /* Reset margin */
   position: sticky;
-  top: 0;
+  top: 8rem;
+  
 }
 
 .Introduction {
@@ -481,6 +482,7 @@ figcaption {
   background-color:#000000;
   position: sticky;
   top: 0;
+  bottom: 8rem;
 }
 
 
