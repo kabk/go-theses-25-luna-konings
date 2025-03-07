@@ -366,7 +366,8 @@ div.thesis-content{
   z-index: 1;
   width:100vw;
   height:auto;
-  box-shadow: 0 0 10px 10px rgb(250, 244, 244); 
+  box-shadow: 0 0 10px 10px rgb(250, 244, 244);
+  padding-bottom: 100px; 
 }
 
 
@@ -382,15 +383,15 @@ div.thesis-content{
 }
 
 .is-chapter p{
-  text-align: left;
-  /* text-justify: inter-character; */
+  text-align: justify;
+  text-justify: inter-character;
   font-weight: bold;
   font-family: Garamond;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   z-index: 1;
-  
+  color: rgb(121, 125, 132);
 }
 
 .firstletter{
@@ -398,7 +399,7 @@ div.thesis-content{
   font-size: 1rem;
 }
 
-#fnref-1{
+[id^="fnref-"] {
   font-family: JetBrainsMono;
   color: rgb(210, 74, 78);
   font-size: 10px;
@@ -406,15 +407,6 @@ div.thesis-content{
   text-decoration: none;
 }
 
-/* .firstwolf {
-  border: 5px #000000 solid;
-  background-color:#000000;
-  padding: 0px;
-  width: 50vw;
-  height: auto;
-  margin: 0 auto; 
-  display: block; 
-} */
 
 figcaption {
   font-family: Terminal;
@@ -463,10 +455,13 @@ figcaption {
   flex: 0 0 calc((100vw - 50vw) / 2); /* Keeps your calculated width */
   margin-left: calc(0px - ((100vw - 50vw) / 2));
   padding-left: 2rem;
-  padding-right: 3rem;
+  padding-right: 2rem;
   margin-top: 0; /* Reset margin */
   position: sticky;
-  top: 8rem;
+  top: 5rem;
+  /* padding-bottom: 4.7rem; */
+  padding-top: 2rem; 
+  z-index: 1;
   
 }
 
@@ -480,9 +475,9 @@ figcaption {
   display: block; /* Removes extra space below inline images */
   border: 0.2rem #000000 solid;
   background-color:#000000;
-  position: sticky;
+  /* position: sticky;
   top: 0;
-  bottom: 8rem;
+  bottom: 8rem; */
 }
 
 
@@ -493,22 +488,31 @@ figcaption {
 h2{
   font-family: Tagettes;
   font-weight: normal;
-  font-size: 50px;
+  font-size: 1.8rem;
   padding-top: 50px;
-  padding-bottom: 30px;
-  /* padding-left: 20px; */
+  padding-bottom: 3.2rem;
+  padding-left: 2rem;
   text-align: center;
   /* color:white; */
-  color: rgb(210, 74, 78);
+  color: rgba(210, 74, 79, 0.294);
   /* color: rgb(121,125,132); */
   position: sticky;
   top: 0;
-  z-index: 0;
-  /* width:100vw; */
-  /* margin-bottom:calc(0px - (min(50px, 3vw) * 2)); */
-  /* margin-left:calc( 0px - ((100vw - 50vw) / 2)); */
+  z-index: 1;
+  width:100vw;
+  margin-bottom:calc(0px - (min(50px, 3vw) * 2));
+  margin-left: calc(0px - ((100vw - 21vw) / 2));
   animation: glow2 1s ease-in-out infinite alternate;
   /* text-decoration:underline 3px; */
+}
+
+.blockquote {
+  display: block; /* Ensures that the <span> acts like a block element */
+  margin-left: 0.5rem; /* Adjust the value as needed */
+  padding-left: 0.5rem;
+  margin-right: 0.5rem; /* Adjust the value as needed */
+  padding-right: 0.5rem; /* Add some space inside the block */
+  text-align: center;
 }
 
 
@@ -525,11 +529,14 @@ h2{
 
 h3{
   text-align: center;
-  font-family: Garamond;
+  font-family: Terminal;
   font-size: 1rem;
   font-weight: bolder;
   font-style: bold;
+  color:rgb(121, 125, 132);
 }
+
+
 
 
 
@@ -570,6 +577,7 @@ h3{
 
   .is-chapter{
     padding:1rem;
+    text-align: left;
   }
 
   /* .image-aside-right, .image-aside-left{
