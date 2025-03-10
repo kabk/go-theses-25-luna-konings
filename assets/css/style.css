@@ -91,6 +91,7 @@ html {
   hyphens: auto;
   max-width: 100%;
   scrollbar-width: none;
+  overflow-x: hidden;
 }
 
 * {
@@ -806,12 +807,12 @@ h3{
     rotate:-5deg;
     color: rgba(255, 255, 255, 0.8);
     position: fixed;
-    top: 10vh;
+    top: 34vh;
     width: 100%;
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
     z-index: 10;
-    line-height: 5rem;
+    line-height: 4rem;
     font-weight: normal;
     margin-bottom: 5rem;
     animation: glow 1s ease-in-out infinite alternate;
@@ -850,14 +851,14 @@ h3{
   h2 {
     font-family: Tagettes;
     font-weight: bold;
-    font-size: clamp(1.5rem, 6vw, 3rem); /* Responsive font size */
+    font-size: 1.8rem; /* Responsive font size */
     padding-top: 4vh;
     padding-bottom: 5rem;
     text-align: center;
     color: rgba(210, 74, 79, 0.8);
     position: sticky;
     top: 4vh; /* Increase this value */
-    z-index: 20; /* Ensure it's above other elements */
+    z-index: 1; /* Ensure it's above other elements */
     width: 100%;
     margin: 0 auto;
     animation: glow2 1s ease-in-out infinite alternate;
@@ -982,7 +983,7 @@ h3{
   z-index: 1000;
 
   /* Initially hidden */
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.4s ease-in-out;
   flex-direction: column;
 }
