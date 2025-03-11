@@ -68,7 +68,7 @@
   --color-text-link: rgba(255, 255, 255, 0.8);
   --color-text-link-hover: rgba(96, 96, 96, 0.4);
   /* Font values */
-  --font-text: 'Terminal' ;
+  --font-text: 'JetBrainsMono' ;
   --font-size: 1.875em;
   /* Margin value */
   --margin: 0;
@@ -89,9 +89,9 @@ html {
   background-color: var(--color-background);
   scroll-behavior: smooth;
   hyphens: auto;
-  max-width: 100%;
+  /* max-width: 100%; */
   scrollbar-width: none;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 * {
@@ -395,10 +395,8 @@ div.thesis-content{
   z-index: 1;
   width:100vw;
   height:auto;
-  max-width: 100vw;
   box-shadow: 0 0 60px 60px rgb(250, 244, 244);
   padding-bottom: 100px; 
-  overflow: visible;
 }
 
 
@@ -410,7 +408,7 @@ div.thesis-content{
   padding-right:calc( (100vw - 50vw) / 2);
   box-sizing: border-box;
   z-index: 1;
-  overflow: visible;
+  
 }
 
 .is-chapter p{
@@ -423,8 +421,30 @@ div.thesis-content{
   line-height: 1.6;
   z-index: 1;
   color: rgb(121, 125, 132);
-  overflow: visible;
 }
+
+
+h2{
+  font-family: Tagettes;
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 50px;
+  padding-bottom: 5rem;
+  /* padding-left: 2rem; */
+  text-align: center;
+  /* color:white; */
+  color: rgba(210, 74, 79, 0.478);
+  /* color: rgb(121,125,132); */
+  position: sticky;
+  top: 10px;
+  z-index: 1;
+  width:100vw;
+  margin-bottom:calc(0px - (min(50px, 3vw) * 2));
+  margin-left: calc(0px - ((100vw - 50vw) / 2));
+  animation: glow2 1s ease-in-out infinite alternate;
+  text-decoration:underline 3px;
+}
+
 
 .bibliography p{
   text-align: left;
@@ -645,26 +665,6 @@ figcaption {
   margin-bottom: 200vw;
 }
 
-h2{
-  font-family: Tagettes;
-  font-weight: bold;
-  font-size: 2rem;
-  padding-top: 50px;
-  padding-bottom: 5rem;
-  /* padding-left: 2rem; */
-  text-align: center;
-  /* color:white; */
-  color: rgba(210, 74, 79, 0.478);
-  /* color: rgb(121,125,132); */
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  width:100vw;
-  margin-bottom:calc(0px - (min(50px, 3vw) * 2));
-  margin-left: calc(0px - ((100vw - 50vw) / 2));
-  animation: glow2 1s ease-in-out infinite alternate;
-  text-decoration:underline 3px;
-}
 
 .blockquote {
   display: block; /* Ensures that the <span> acts like a block element */
@@ -774,222 +774,176 @@ h3{
 
   /* your 'mobile' overriding css properties here */
 
-  .is-chapter{
-    padding:1rem;
-    text-align: left;
-  }
+  @media (max-width: 779px) {
 
-  .image-aside-right, .image-aside-left{
-    position: relative;
-    display:block;
-    float:left;
-    width:100%;
-    margin:0;
-    padding:0;
-    padding-top:1rem;
-    padding-bottom:1rem;
-    box-sizing: border-box;
+    /* Mobile layout adjustments */
+    html, body {
+      overflow-x: hidden;
+    }
+
+
+    .is-chapter {
+      padding: 1rem;
+      text-align: left;
+    }
+  
+    .image-aside-right, .image-aside-left {
+      position: relative;
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 0;
+      padding: 1rem 0;
+      box-sizing: border-box;
+    }
+  
+    /* Utility classes */
+    .desktop-only {
+      display: none;
+    }
+  
+    .mobile-only {
+      display: block;
+    }
+  
+    h1 {
+      font-family: "Tagettes";
+      font-style: normal;
+      rotate: -5deg;
+      color: rgba(255, 255, 255, 0.8);
+      position: fixed;
+      top: 34vh;
+      width: 100%;
+      font-size: 35px;
+      text-align: center;
+      z-index: 10;
+      line-height: 4rem;
+      font-weight: normal;
+      margin-bottom: 5rem;
+      animation: glow 1s ease-in-out infinite alternate;
+      opacity: 1;
+    }
+  
+    h2 {
+      font-family: Tagettes;
+      font-weight: bold;
+      font-size: 1.8rem;
+      padding-top: 4vh;
+      padding-bottom: 5rem;
+      text-align: center;
+      color: rgba(210, 74, 79, 0.8);
+      position: sticky;
+      top: 4vh;
+      z-index: 1; /* Ensures it appears above other elements */
+      width: 100%;
+      margin: 0 auto;
+      animation: glow2 1s ease-in-out infinite alternate;
+      text-decoration: underline 3px;
+    }
+  
+    /* Navigation */
+    #nav > ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      list-style: none;
+      width: 100%;
+      height: var(--nav-height);
+      background-color: rgb(0, 0, 0);
+      font-family: Terminal;
+      font-weight: bold;
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+      flex-wrap: wrap;
+      line-height: 0.5rem;
+      gap: 0.5rem;
+    }
+  
+    /* Image container styles */
+    .image-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 90vw;
+    }
+  
+    .image-container {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+  
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: invert(100%) grayscale(100%);
+      transition: filter 0.3s ease;
+      margin: 0 auto;
+    }
+  
+    /* Removing redundant styles by using a single selector */
+    .image-container img.sheep,
+    .image-container img.mamagoat,
+    .image-container img.ysengrimus,
+    .image-container img.bigbadwolf,
+    .image-container img.nazi,
+    .image-container img.kolham,
+    .image-container img.ursula,
+    .image-container img.waterwolf,
+    .image-container img.wildcam,
+    .image-container img.livestream,
+    .image-container img.practicalpig {
+      width: 100% !important;
+      height: auto;
+    }
+  
+    .image-container img.basket {
+      width: 100% !important;
+      height: auto;
+      filter: none;
+    }
+  
+    .image-center-two {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  
+    /* Footer */
+    .footer {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      background-color: rgb(0, 0, 0);
+      font-family: Terminal;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 0.25rem 0.5rem;
+      box-sizing: border-box;
+      z-index: 1000;
+  
+      /* Initially hidden */
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      flex-direction: column;
+    }
   }
   
-  /* utility classes, mobile */
-
-  .desktop-only{
-    display:none;
-  }
-
-  .mobile-only{
-    display:block;
-  }
-
-  h1{
-    font-family: "Tagettes";
-    font-style: normal;
-    rotate:-5deg;
-    color: rgba(255, 255, 255, 0.8);
-    position: fixed;
-    top: 34vh;
-    width: 100%;
-    font-size: 35px;
-    text-align: center;
-    z-index: 10;
-    line-height: 4rem;
-    font-weight: normal;
-    margin-bottom: 5rem;
-    animation: glow 1s ease-in-out infinite alternate;
-    opacity:10;
-  }
-
-  /* h2{
-    font-size:6vw;
-    margin-bottom:0;
-    margin: 0 auto;  
-    position:sticky;
-    top: 10vh;
-
-  } */
-
-  #nav>ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    list-style: none;
-    width: 100%;
-    height: var(--nav-height);
-    background-color: rgb(0, 0, 0);
-    font-family: Terminal;
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding:0.4rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    flex-wrap: wrap;
-    line-height:0.5rem;
-    gap: 0.5rem;
-  }
-
-  h2 {
-    font-family: Tagettes;
-    font-weight: bold;
-    font-size: 1.8rem; /* Responsive font size */
-    padding-top: 4vh;
-    padding-bottom: 5rem;
-    text-align: center;
-    color: rgba(210, 74, 79, 0.8);
-    position: sticky;
-    top: 4vh; /* Increase this value */
-    z-index: 1; /* Ensure it's above other elements */
-    width: 100%;
-    margin: 0 auto;
-    animation: glow2 1s ease-in-out infinite alternate;
-    text-decoration: underline 3px;
-}
-
-.image-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* Keeps images centered horizontally */
-  justify-content: center;  /* Adds vertical centering if necessary */
-  text-align: center;
-  width: 90vw; /* Adjust width to be more suitable for mobile */
-}
-
-.image-container {
-  display: block;  /* Ensure the container takes up the full width available */
-  width: 100%;  /* Ensure the image container fills the screen width */
-  margin: 0 auto;  /* Horizontally center the container */
-  padding: 0;  /* Reset padding to prevent shifting */
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: invert(100%) grayscale(100%);
-  transition: filter 0.3s ease;
-  margin: 0 auto;  /* Ensures the image is centered within the container */
-  padding: 0;
-}
-
-.image-container img.sheep {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.mamagoat {
-  width: 100% !important; /* Adjust width to 100% on mobile */
-  height: auto;
-}
-
-.image-container img.ysengrimus {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.bigbadwolf {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.nazi {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.kolham {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.ursula {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.waterwolf {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.wildcam {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.livestream {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.practicalpig {
-  width: 100% !important;
-  height: auto;
-}
-
-.image-container img.basket {
-  width: 100% !important;
-  height: auto;
-  filter: none;
-}
-
-.image-center-two{
-  display: flex;
-  flex-direction: row;  /* Places items in a row instead of a column */
-  justify-content: center; /* Centers the images horizontally */
-  align-items: center; /* Aligns them vertically */
-  gap: 1rem; /* Optional: Adds space between the images */
-  text-align: center;
-  width: 100%;
-  flex-wrap: wrap; /* Ensures responsiveness */
-}
-
-.footer {
-  
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: var(--nav-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  background-color: rgb(0, 0, 0);
-  font-family: Terminal;
-  font-weight: 600;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.25rem 0.5rem;
-  box-sizing: border-box;
-  z-index: 1000;
-
-  /* Initially hidden */
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-  flex-direction: column;
-}
-
-
-}
 
 
 
@@ -1022,5 +976,4 @@ h3{
   /* your overriding css properties here */
 
 }
-
-
+}
