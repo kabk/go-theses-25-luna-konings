@@ -127,6 +127,7 @@ body {
   counter-reset: sidenote-counter;
   max-width: 100%;
   -ms-overflow-style: none;
+
 }
 
 a {
@@ -435,7 +436,7 @@ h2{
   /* color:white; */
   color: rgba(210, 74, 79, 0.478);
   /* color: rgb(121,125,132); */
-  position: sticky;
+  position: sticky; 
   top: 10px;
   z-index: 1;
   width:100vw;
@@ -779,6 +780,7 @@ h3{
     /* Mobile layout adjustments */
     html, body {
       overflow-x: hidden;
+      display: block;
     }
 
 
@@ -835,7 +837,7 @@ h3{
       padding-bottom: 2rem;
       text-align: center;
       color: rgba(210, 74, 79, 0.8);
-      position: sticky;
+      position: sticky !important;
       top: 4vh;
       z-index: 1; 
       width: 100%;
