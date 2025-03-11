@@ -779,7 +779,7 @@ h3{
 
     /* Mobile layout adjustments */
     html, body {
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
       display: block;
     }
 
