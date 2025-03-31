@@ -123,7 +123,7 @@ body {
   width:100%;
   height:auto;
   overflow-y:auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   counter-reset: sidenote-counter;
   max-width: 100%;
   -ms-overflow-style: none;
@@ -146,6 +146,7 @@ a:hover {
   display: grid;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -205,7 +206,7 @@ div.page-wrapper {
   padding: var(--margin);
   display:flex;
   width: 100vw;
-
+  overflow-x: hidden;
 }
 
 
@@ -378,7 +379,7 @@ div.page-wrapper {
   left: 0;
   z-index: -10; 
   clip-path: inset(0 0 0 0);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 div.empty{
@@ -510,6 +511,12 @@ h2{
   font-size: 0.7rem !important;
   vertical-align: super;
   font-weight: bold;
+}
+
+.sidenote-number:hover {
+ text-decoration: underline; 
+  color: rgba(96, 96, 96, 0.4);
+ 
 }
 
 label.margin-toggle:not(.sidenote-number) {
@@ -779,7 +786,6 @@ h3{
 
     /* Mobile layout adjustments */
     html, body {
-      overflow-x: hidden;
       display: block;
     }
 
@@ -828,7 +834,7 @@ h3{
       animation: glow 1s ease-in-out infinite alternate;
       opacity: 1;
       
-      overflow-x: hidden;
+     
     }
   
     h2 {
@@ -948,6 +954,8 @@ h3{
       transition: opacity 0.4s ease-in-out;
       flex-direction: column;
     }
+
+  
   }
   
 
