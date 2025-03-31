@@ -206,7 +206,7 @@ div.page-wrapper {
   padding: var(--margin);
   display:flex;
   width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 
@@ -787,6 +787,7 @@ h3{
     /* Mobile layout adjustments */
     html, body {
       display: block;
+       overflow-x: hidden;
     }
 
 
